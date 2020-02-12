@@ -227,6 +227,7 @@ class CoqStopCommand(ManagerCommand):
 
         manager.stop()
         del managers[self.view.buffer_id()]
+        self.view.set_read_only(False)
 
 def plugin_unloaded():
     for manager in list(managers.values()):
