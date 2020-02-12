@@ -55,6 +55,7 @@ class Coqtop:
                 print('coq:> ' + prompt.strip())
 
             output = re.sub(r'<infomsg>\n?|\n?</infomsg>', '', output)
+            output = re.sub(r'<warning>\n?|\n?</warning>', '', output)
             self.manager.receive(output, prompt)
 
     def send(self, statement):
