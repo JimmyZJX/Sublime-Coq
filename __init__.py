@@ -571,7 +571,7 @@ class CoqEvaluateInputHandler(sublime_plugin.TextInputHandler):
 class CoqContext(sublime_plugin.EventListener):
     def on_query_context(self, view, key, operator, operand, match_all):
         if key == 'coq':
-            value = view.settings().get('coq')
+            value = view.settings().get('coq') or 'not_managed'
         elif key == 'coq_error':
             value = bool(CoqtopManager.coqtop_view.find_by_selector('message.error'))
         else:
