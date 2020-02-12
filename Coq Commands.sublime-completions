@@ -1,5 +1,5 @@
 {
-  "scope": "meta.sentence.coq",
+  "scope": "source.coq",
 
   "completions":
   [
