@@ -264,6 +264,9 @@ class CoqCommand(ManagerCommand):
         if position is None:
             position = manager.position
         position = manager.editor_view.find(r'\s*', position).end()
+        # Bug in ST3: find returns Region(-1,-1) when not found
+        if position < 0 or position is None:
+            return None
         return manager.editor_view.find(re, position)
 
     def _substr_find_at_pos(self, re, position=None):
