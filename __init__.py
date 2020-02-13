@@ -323,7 +323,7 @@ class CoqNextStatementCommand(CoqCommand):
 
         comment_region   = self._find_at_pos(RE_COMMENT)
         statement_region = self._find_statement()
-        regions = filter(lambda x: x, [comment_region, statement_region])
+        regions = list(filter(lambda x: x, [comment_region, statement_region]))
         if not regions:
             return
         region = min(regions, key=lambda x: x.begin())
