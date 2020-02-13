@@ -17,7 +17,12 @@
     { "trigger": "Fact", "contents": "Fact $1 : $2.\nProof.\n  $0\nQed." },
     { "trigger": "Remark", "contents": "Remark $1 : $2.\nProof.\n  $0\nQed." },
 
+    { "trigger": "Section", "contents": "Section $1.\n\n$0\n\nEnd $1." },
+
     { "trigger": "forall", "contents": "forall $1: $2, $0" },
+    { "trigger": "exists", "contents": "exists $1, $0" },
+    { "trigger": "fun", "contents": "fun (${1:x}:${2:type}) => ${0:body}" },
+    { "trigger": "if", "contents": "if ${1:bool} then $2 else $3" },
     { "trigger": "match", "contents": "match $1 with\n| $2 => $3\nend" }
   ]
 }
